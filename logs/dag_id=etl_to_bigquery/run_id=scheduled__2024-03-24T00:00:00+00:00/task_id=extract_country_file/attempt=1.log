@@ -1,0 +1,52 @@
+[2024-03-25T07:53:11.762+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_to_bigquery.extract_country_file scheduled__2024-03-24T00:00:00+00:00 [queued]>
+[2024-03-25T07:53:11.775+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_to_bigquery.extract_country_file scheduled__2024-03-24T00:00:00+00:00 [queued]>
+[2024-03-25T07:53:11.776+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2024-03-25T07:53:11.793+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract_country_file> on 2024-03-24 00:00:00+00:00
+[2024-03-25T07:53:11.800+0000] {standard_task_runner.py:60} INFO - Started process 2176 to run task
+[2024-03-25T07:53:11.804+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_to_bigquery', 'extract_country_file', 'scheduled__2024-03-24T00:00:00+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpcow1kwb4']
+[2024-03-25T07:53:11.810+0000] {standard_task_runner.py:88} INFO - Job 51: Subtask extract_country_file
+[2024-03-25T07:53:11.885+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_to_bigquery.extract_country_file scheduled__2024-03-24T00:00:00+00:00 [running]> on host 8a685a05c3f5
+[2024-03-25T07:53:11.987+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='minhduc' AIRFLOW_CTX_DAG_ID='etl_to_bigquery' AIRFLOW_CTX_TASK_ID='extract_country_file' AIRFLOW_CTX_EXECUTION_DATE='2024-03-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-24T00:00:00+00:00'
+[2024-03-25T07:53:12.013+0000] {python.py:201} INFO - Done. Returned value was:       id iso               name           nicename iso3  numcode  phonecode
+0      1  AF        AFGHANISTAN        Afghanistan  AFG      4.0         93
+1      2  AL            ALBANIA            Albania  ALB      8.0        355
+2      3  DZ            ALGERIA            Algeria  DZA     12.0        213
+3      4  AS     AMERICAN SAMOA     American Samoa  ASM     16.0       1684
+4      5  AD            ANDORRA            Andorra  AND     20.0        376
+..   ...  ..                ...                ...  ...      ...        ...
+234  235  WF  WALLIS AND FUTUNA  Wallis and Futuna  WLF    876.0        681
+235  236  EH     WESTERN SAHARA     Western Sahara  ESH    732.0        212
+236  237  YE              YEMEN              Yemen  YEM    887.0        967
+237  238  ZM             ZAMBIA             Zambia  ZMB    894.0        260
+238  239  ZW           ZIMBABWE           Zimbabwe  ZWE    716.0        263
+
+[239 rows x 7 columns]
+[2024-03-25T07:53:12.166+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_to_bigquery, task_id=extract_country_file, execution_date=20240324T000000, start_date=20240325T075311, end_date=20240325T075312
+[2024-03-25T07:53:12.220+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-25T07:53:12.258+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-03-25T16:00:25.103+0700] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_to_bigquery.extract_country_file scheduled__2024-03-24T00:00:00+00:00 [queued]>
+[2024-03-25T16:00:25.117+0700] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_to_bigquery.extract_country_file scheduled__2024-03-24T00:00:00+00:00 [queued]>
+[2024-03-25T16:00:25.118+0700] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2024-03-25T16:00:25.144+0700] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract_country_file> on 2024-03-24 00:00:00+00:00
+[2024-03-25T16:00:25.156+0700] {standard_task_runner.py:60} INFO - Started process 633 to run task
+[2024-03-25T16:00:25.160+0700] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_to_bigquery', 'extract_country_file', 'scheduled__2024-03-24T00:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmp3k47g3_l']
+[2024-03-25T16:00:25.164+0700] {standard_task_runner.py:88} INFO - Job 25: Subtask extract_country_file
+[2024-03-25T16:00:25.227+0700] {task_command.py:423} INFO - Running <TaskInstance: etl_to_bigquery.extract_country_file scheduled__2024-03-24T00:00:00+00:00 [running]> on host b24fc08bdd37
+[2024-03-25T16:00:25.330+0700] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='minhduc' AIRFLOW_CTX_DAG_ID='etl_to_bigquery' AIRFLOW_CTX_TASK_ID='extract_country_file' AIRFLOW_CTX_EXECUTION_DATE='2024-03-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-24T00:00:00+00:00'
+[2024-03-25T16:00:25.342+0700] {python.py:201} INFO - Done. Returned value was:       id iso               name           nicename iso3  numcode  phonecode
+0      1  AF        AFGHANISTAN        Afghanistan  AFG      4.0         93
+1      2  AL            ALBANIA            Albania  ALB      8.0        355
+2      3  DZ            ALGERIA            Algeria  DZA     12.0        213
+3      4  AS     AMERICAN SAMOA     American Samoa  ASM     16.0       1684
+4      5  AD            ANDORRA            Andorra  AND     20.0        376
+..   ...  ..                ...                ...  ...      ...        ...
+234  235  WF  WALLIS AND FUTUNA  Wallis and Futuna  WLF    876.0        681
+235  236  EH     WESTERN SAHARA     Western Sahara  ESH    732.0        212
+236  237  YE              YEMEN              Yemen  YEM    887.0        967
+237  238  ZM             ZAMBIA             Zambia  ZMB    894.0        260
+238  239  ZW           ZIMBABWE           Zimbabwe  ZWE    716.0        263
+
+[239 rows x 7 columns]
+[2024-03-25T16:00:25.417+0700] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_to_bigquery, task_id=extract_country_file, execution_date=20240324T000000, start_date=20240325T090025, end_date=20240325T090025
+[2024-03-25T16:00:25.453+0700] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-25T16:00:25.487+0700] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

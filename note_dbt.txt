@@ -1,0 +1,2 @@
+dbt deps
+dbt run --profiles-dir  /home/tranminhduc/DWH_retail_project/dags/dbt_transform/

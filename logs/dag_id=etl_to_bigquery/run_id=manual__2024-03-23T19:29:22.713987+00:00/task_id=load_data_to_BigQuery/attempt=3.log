@@ -1,0 +1,14 @@
+[2024-03-23T19:38:43.380+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_to_bigquery.load_data_to_BigQuery manual__2024-03-23T19:29:22.713987+00:00 [queued]>
+[2024-03-23T19:38:43.394+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_to_bigquery.load_data_to_BigQuery manual__2024-03-23T19:29:22.713987+00:00 [queued]>
+[2024-03-23T19:38:43.395+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 4
+[2024-03-23T19:38:43.412+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_data_to_BigQuery> on 2024-03-23 19:29:22.713987+00:00
+[2024-03-23T19:38:43.420+0000] {standard_task_runner.py:60} INFO - Started process 8826 to run task
+[2024-03-23T19:38:43.423+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_to_bigquery', 'load_data_to_BigQuery', 'manual__2024-03-23T19:29:22.713987+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmp_ec9yldz']
+[2024-03-23T19:38:43.426+0000] {standard_task_runner.py:88} INFO - Job 27: Subtask load_data_to_BigQuery
+[2024-03-23T19:38:43.484+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_to_bigquery.load_data_to_BigQuery manual__2024-03-23T19:29:22.713987+00:00 [running]> on host 8a685a05c3f5
+[2024-03-23T19:38:43.889+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='minhduc' AIRFLOW_CTX_DAG_ID='etl_to_bigquery' AIRFLOW_CTX_TASK_ID='load_data_to_BigQuery' AIRFLOW_CTX_EXECUTION_DATE='2024-03-23T19:29:22.713987+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-23T19:29:22.713987+00:00'
+[2024-03-23T19:38:43.893+0000] {logging_mixin.py:188} INFO - Data load error: [Errno 2] No such file or directory: '/opt/***/dags/steady-monitor-415517-e7480ee492d7.json'
+[2024-03-23T19:38:43.895+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-03-23T19:38:43.912+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_to_bigquery, task_id=load_data_to_BigQuery, execution_date=20240323T192922, start_date=20240323T193843, end_date=20240323T193843
+[2024-03-23T19:38:43.958+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-23T19:38:43.979+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

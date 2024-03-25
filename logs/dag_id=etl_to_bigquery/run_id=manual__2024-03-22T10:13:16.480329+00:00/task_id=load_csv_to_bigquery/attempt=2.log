@@ -1,0 +1,48 @@
+[2024-03-22T10:14:07.373+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_to_bigquery.load_csv_to_bigquery manual__2024-03-22T10:13:16.480329+00:00 [queued]>
+[2024-03-22T10:14:07.384+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_to_bigquery.load_csv_to_bigquery manual__2024-03-22T10:13:16.480329+00:00 [queued]>
+[2024-03-22T10:14:07.385+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2024-03-22T10:14:07.403+0000] {taskinstance.py:2191} INFO - Executing <Task(BigQueryInsertJobOperator): load_csv_to_bigquery> on 2024-03-22 10:13:16.480329+00:00
+[2024-03-22T10:14:07.410+0000] {standard_task_runner.py:60} INFO - Started process 1293 to run task
+[2024-03-22T10:14:07.414+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_to_bigquery', 'load_csv_to_bigquery', 'manual__2024-03-22T10:13:16.480329+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpi2280ih1']
+[2024-03-22T10:14:07.417+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask load_csv_to_bigquery
+[2024-03-22T10:14:07.472+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_to_bigquery.load_csv_to_bigquery manual__2024-03-22T10:13:16.480329+00:00 [running]> on host 8a685a05c3f5
+[2024-03-22T10:14:07.583+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='minhduc' AIRFLOW_CTX_DAG_ID='etl_to_bigquery' AIRFLOW_CTX_TASK_ID='load_csv_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2024-03-22T10:13:16.480329+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-22T10:13:16.480329+00:00'
+[2024-03-22T10:14:07.594+0000] {connection.py:234} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-03-22T10:14:07.596+0000] {base.py:83} INFO - Using connection ID 'gcp' for task execution.
+[2024-03-22T10:14:07.597+0000] {bigquery.py:2690} INFO - Executing: {'load': {'sourceFormat': 'CSV', 'skipLeadingRows': 1, 'destinationTable': {'projectId': 'steady-monitor-415517', 'datasetId': 'retail', 'tableId': 'raw_invoices'}, 'schema': {'fields': [{'name': 'InvoiceNo', 'type': 'INTEGER'}, {'name': 'StockCode', 'type': 'STRING'}, {'name': 'Description', 'type': 'STRING'}, {'name': 'Quantity', 'type': 'INTEGER'}, {'name': 'InvoiceDate', 'type': 'DATE'}, {'name': 'UnitPrice', 'type': 'FLOAT'}, {'name': 'CustomerID', 'type': 'INTEGER'}, {'name': 'Country', 'type': 'STRING'}]}, 'sourceUris': ['/opt/***/dags/data/Online_Retail.csv'], 'writeDisposition': 'WRITE_TRUNCATE'}}'
+[2024-03-22T10:14:07.659+0000] {bigquery.py:1596} INFO - Inserting job load_csv_to_bigquery_job_c4e9469af547604776dc924cc7abd7f4
+[2024-03-22T10:14:09.630+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 2691, in execute
+    job: BigQueryJob | UnknownJob = self._submit_job(hook, job_id)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 2658, in _submit_job
+    return hook.insert_job(
+           ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/google/common/hooks/base_google.py", line 475, in inner_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1599, in insert_job
+    job_api_repr._begin()
+  File "/home/airflow/.local/lib/python3.11/site-packages/google/cloud/bigquery/job/base.py", line 740, in _begin
+    api_response = client._call_api(
+                   ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/google/cloud/bigquery/client.py", line 818, in _call_api
+    return call()
+           ^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/google/api_core/retry.py", line 372, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/google/api_core/retry.py", line 207, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/google/cloud/_http/__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/bigquery/v2/projects/steady-monitor-415517/jobs?prettyPrint=false: Source URI must be a Google Cloud Storage location: /opt/airflow/dags/data/Online_Retail.csv
+[2024-03-22T10:14:09.646+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_to_bigquery, task_id=load_csv_to_bigquery, execution_date=20240322T101316, start_date=20240322T101407, end_date=20240322T101409
+[2024-03-22T10:14:09.665+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 11 for task load_csv_to_bigquery (400 POST https://bigquery.googleapis.com/bigquery/v2/projects/steady-monitor-415517/jobs?prettyPrint=false: Source URI must be a Google Cloud Storage location: /opt/airflow/dags/data/Online_Retail.csv; 1293)
+[2024-03-22T10:14:09.716+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-22T10:14:09.737+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

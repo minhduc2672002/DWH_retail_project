@@ -1,0 +1,18 @@
+[2024-03-25T07:53:25.825+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_to_bigquery.create_retail_dataset manual__2024-03-25T07:53:22.503826+00:00 [queued]>
+[2024-03-25T07:53:25.838+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_to_bigquery.create_retail_dataset manual__2024-03-25T07:53:22.503826+00:00 [queued]>
+[2024-03-25T07:53:25.838+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2024-03-25T07:53:25.857+0000] {taskinstance.py:2191} INFO - Executing <Task(BigQueryCreateEmptyDatasetOperator): create_retail_dataset> on 2024-03-25 07:53:22.503826+00:00
+[2024-03-25T07:53:25.866+0000] {standard_task_runner.py:60} INFO - Started process 2235 to run task
+[2024-03-25T07:53:25.869+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_to_bigquery', 'create_retail_dataset', 'manual__2024-03-25T07:53:22.503826+00:00', '--job-id', '57', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpakl_rhny']
+[2024-03-25T07:53:25.872+0000] {standard_task_runner.py:88} INFO - Job 57: Subtask create_retail_dataset
+[2024-03-25T07:53:25.927+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_to_bigquery.create_retail_dataset manual__2024-03-25T07:53:22.503826+00:00 [running]> on host 8a685a05c3f5
+[2024-03-25T07:53:26.021+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='minhduc' AIRFLOW_CTX_DAG_ID='etl_to_bigquery' AIRFLOW_CTX_TASK_ID='create_retail_dataset' AIRFLOW_CTX_EXECUTION_DATE='2024-03-25T07:53:22.503826+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-25T07:53:22.503826+00:00'
+[2024-03-25T07:53:26.036+0000] {connection.py:234} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-03-25T07:53:26.039+0000] {base.py:83} INFO - Using connection ID 'gcp' for task execution.
+[2024-03-25T07:53:26.041+0000] {bigquery.py:468} INFO - datasetId was not specified in `dataset_reference`. Will use default value retail.
+[2024-03-25T07:53:26.042+0000] {bigquery.py:468} INFO - projectId was not specified in `dataset_reference`. Will use default value steady-monitor-415517.
+[2024-03-25T07:53:26.043+0000] {bigquery.py:479} INFO - Creating dataset: retail in project: steady-monitor-415517 
+[2024-03-25T07:53:27.035+0000] {bigquery.py:1932} INFO - Dataset retail already exists.
+[2024-03-25T07:53:27.070+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_to_bigquery, task_id=create_retail_dataset, execution_date=20240325T075322, start_date=20240325T075325, end_date=20240325T075327
+[2024-03-25T07:53:27.127+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-25T07:53:27.164+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check

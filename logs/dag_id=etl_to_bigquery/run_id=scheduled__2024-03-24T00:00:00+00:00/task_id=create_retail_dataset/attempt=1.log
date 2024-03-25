@@ -1,0 +1,50 @@
+[2024-03-25T07:53:07.232+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_to_bigquery.create_retail_dataset scheduled__2024-03-24T00:00:00+00:00 [queued]>
+[2024-03-25T07:53:07.243+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_to_bigquery.create_retail_dataset scheduled__2024-03-24T00:00:00+00:00 [queued]>
+[2024-03-25T07:53:07.244+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2024-03-25T07:53:07.264+0000] {taskinstance.py:2191} INFO - Executing <Task(BigQueryCreateEmptyDatasetOperator): create_retail_dataset> on 2024-03-24 00:00:00+00:00
+[2024-03-25T07:53:07.276+0000] {standard_task_runner.py:60} INFO - Started process 2171 to run task
+[2024-03-25T07:53:07.284+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_to_bigquery', 'create_retail_dataset', 'scheduled__2024-03-24T00:00:00+00:00', '--job-id', '50', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmptrux6ylj']
+[2024-03-25T07:53:07.296+0000] {standard_task_runner.py:88} INFO - Job 50: Subtask create_retail_dataset
+[2024-03-25T07:53:07.406+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_to_bigquery.create_retail_dataset scheduled__2024-03-24T00:00:00+00:00 [running]> on host 8a685a05c3f5
+[2024-03-25T07:53:07.518+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='minhduc' AIRFLOW_CTX_DAG_ID='etl_to_bigquery' AIRFLOW_CTX_TASK_ID='create_retail_dataset' AIRFLOW_CTX_EXECUTION_DATE='2024-03-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-24T00:00:00+00:00'
+[2024-03-25T07:53:07.534+0000] {connection.py:234} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-03-25T07:53:07.537+0000] {base.py:83} INFO - Using connection ID 'gcp' for task execution.
+[2024-03-25T07:53:07.538+0000] {bigquery.py:468} INFO - datasetId was not specified in `dataset_reference`. Will use default value retail.
+[2024-03-25T07:53:07.539+0000] {bigquery.py:468} INFO - projectId was not specified in `dataset_reference`. Will use default value steady-monitor-415517.
+[2024-03-25T07:53:07.540+0000] {bigquery.py:479} INFO - Creating dataset: retail in project: steady-monitor-415517 
+[2024-03-25T07:53:09.355+0000] {bigquery.py:1932} INFO - Dataset retail already exists.
+[2024-03-25T07:53:09.397+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_to_bigquery, task_id=create_retail_dataset, execution_date=20240324T000000, start_date=20240325T075307, end_date=20240325T075309
+[2024-03-25T07:53:09.429+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-25T07:53:09.464+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-03-25T15:55:18.195+0700] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_to_bigquery.create_retail_dataset scheduled__2024-03-24T00:00:00+00:00 [queued]>
+[2024-03-25T15:55:18.207+0700] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_to_bigquery.create_retail_dataset scheduled__2024-03-24T00:00:00+00:00 [queued]>
+[2024-03-25T15:55:18.208+0700] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2024-03-25T15:55:18.224+0700] {taskinstance.py:2191} INFO - Executing <Task(BigQueryCreateEmptyDatasetOperator): create_retail_dataset> on 2024-03-24 00:00:00+00:00
+[2024-03-25T15:55:18.233+0700] {standard_task_runner.py:60} INFO - Started process 298 to run task
+[2024-03-25T15:55:18.237+0700] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_to_bigquery', 'create_retail_dataset', 'scheduled__2024-03-24T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmp3bawuj28']
+[2024-03-25T15:55:18.240+0700] {standard_task_runner.py:88} INFO - Job 3: Subtask create_retail_dataset
+[2024-03-25T15:55:18.294+0700] {task_command.py:423} INFO - Running <TaskInstance: etl_to_bigquery.create_retail_dataset scheduled__2024-03-24T00:00:00+00:00 [running]> on host b24fc08bdd37
+[2024-03-25T15:55:18.398+0700] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='minhduc' AIRFLOW_CTX_DAG_ID='etl_to_bigquery' AIRFLOW_CTX_TASK_ID='create_retail_dataset' AIRFLOW_CTX_EXECUTION_DATE='2024-03-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-24T00:00:00+00:00'
+[2024-03-25T15:55:18.420+0700] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 1898, in execute
+    bq_hook = BigQueryHook(
+              ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 116, in __init__
+    super().__init__(
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/google/common/hooks/base_google.py", line 237, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/hooks/base.py", line 82, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/connection.py", line 479, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `gcp` isn't defined
+[2024-03-25T15:55:18.430+0700] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_to_bigquery, task_id=create_retail_dataset, execution_date=20240324T000000, start_date=20240325T085518, end_date=20240325T085518
+[2024-03-25T15:55:18.446+0700] {standard_task_runner.py:107} ERROR - Failed to execute job 3 for task create_retail_dataset (The conn_id `gcp` isn't defined; 298)
+[2024-03-25T15:55:18.490+0700] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-25T15:55:18.519+0700] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

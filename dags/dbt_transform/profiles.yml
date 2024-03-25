@@ -1,0 +1,12 @@
+dbt_transform:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /home/tranminhduc/DWH_retail_project/dags/data/steady-monitor-415517-e7480ee492d7.json
+      project: steady-monitor-415517
+      dataset: retail
+      threads: 1
+      timeout_seconds: 300
+      location: asia-southeast1  

@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: retail
+    database: steady-monitor-415517
+
+    tables:
+      - name: invoice_cleaned
+      - name: country

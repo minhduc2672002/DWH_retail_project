@@ -1,0 +1,25 @@
+[2024-03-23T19:32:40.408+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_to_bigquery.transform_data manual__2024-03-23T19:29:22.713987+00:00 [queued]>
+[2024-03-23T19:32:40.420+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_to_bigquery.transform_data manual__2024-03-23T19:29:22.713987+00:00 [queued]>
+[2024-03-23T19:32:40.421+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2024-03-23T19:32:40.439+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform_data> on 2024-03-23 19:29:22.713987+00:00
+[2024-03-23T19:32:40.448+0000] {standard_task_runner.py:60} INFO - Started process 8578 to run task
+[2024-03-23T19:32:40.452+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_to_bigquery', 'transform_data', 'manual__2024-03-23T19:29:22.713987+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmp7k6oe5k5']
+[2024-03-23T19:32:40.455+0000] {standard_task_runner.py:88} INFO - Job 23: Subtask transform_data
+[2024-03-23T19:32:40.508+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_to_bigquery.transform_data manual__2024-03-23T19:29:22.713987+00:00 [running]> on host 8a685a05c3f5
+[2024-03-23T19:32:40.978+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='minhduc' AIRFLOW_CTX_DAG_ID='etl_to_bigquery' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2024-03-23T19:29:22.713987+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-23T19:29:22.713987+00:00'
+[2024-03-23T19:32:40.980+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: transform_data() missing 1 required positional argument: 'data'
+[2024-03-23T19:32:40.991+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_to_bigquery, task_id=transform_data, execution_date=20240323T192922, start_date=20240323T193240, end_date=20240323T193240
+[2024-03-23T19:32:41.006+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 23 for task transform_data (transform_data() missing 1 required positional argument: 'data'; 8578)
+[2024-03-23T19:32:41.027+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-23T19:32:41.057+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
